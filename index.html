@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Корень — калькулятор корней</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/bignumber.js@9.1.2/bignumber.min.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <span class="logo">Корень</span>
+
+    <a class="header-link" href="#calculator">
+      Калькулятор
+    </a>
+  </div>
+</header>
+
+<main>
+  <section class="calculator-section" id="calculator">
+    <div class="calculator-card">
+      <div class="calculator-header">
+        <div>
+          <p class="eyebrow">Математический инструмент</p>
+
+          <h1>Калькулятор корней</h1>
+
+          <p class="subtitle">
+            Квадратный корень из любого действительного числа с заданной точностью.
+          </p>
+        </div>
+
+        <div class="formula">√x</div>
+      </div>
+
+      <form id="root-form">
+        <label class="input-label" for="number-input">
+          Число
+        </label>
+
+        <input
+                id="number-input"
+                class="number-input"
+                type="text"
+                inputmode="decimal"
+                autocomplete="off"
+                placeholder="Например, 2 или -25"
+        >
+
+        <div class="settings">
+          <div class="setting-block">
+            <label class="input-label" for="precision-toggle">
+              Заданная точность
+            </label>
+
+            <div class="precision-control">
+              <label class="switch">
+                <input
+                        id="precision-toggle"
+                        type="checkbox"
+                        checked
+                >
+
+                <span class="slider"></span>
+              </label>
+
+              <span>Знаков после запятой</span>
+
+              <input
+                      id="precision-input"
+                      class="precision-input"
+                      type="number"
+                      min="0"
+                      max="1000"
+                      value="2"
+                      aria-label="Количество знаков после запятой"
+              >
+            </div>
+          </div>
+        </div>
+
+        <button class="calculate-button" type="submit">
+          Вычислить корень
+          <span>→</span>
+        </button>
+
+        <div class="result" id="result" aria-live="polite">
+          <div class="result-title">Результат</div>
+          <div class="result-value" id="result-value"></div>
+        </div>
+
+        <div
+                class="error-message"
+                id="error-message"
+                role="alert"
+        ></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+<footer class="site-footer">
+  <a
+          href="https://t.me/CalculatorBugsBot"
+          target="_blank"
+          rel="noopener noreferrer"
+  >
+    Обратная связь
+  </a>
+</footer>
+</body>
+</html>
